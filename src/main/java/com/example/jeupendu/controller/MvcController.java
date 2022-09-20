@@ -48,4 +48,15 @@ public class MvcController {
         }
     }
 
+    @GetMapping("start")
+    public String start(){
+        return "start.html";
+    }
+    @PostMapping("start")
+    public String start(String pseudo, HttpSession session, Model model){
+
+        session.setAttribute("pseudo", pseudo);
+
+        return accueil(session, model);
+    }
 }

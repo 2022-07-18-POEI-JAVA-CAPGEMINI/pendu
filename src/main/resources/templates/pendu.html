@@ -11,6 +11,9 @@
 <body>
 <h1>Jeu du Pendu</h1>
 
+<span>Vous êtes:</span>
+<p th:text="${session.pseudo}"></p>
+
 Mot à deviner:<span th:text="${motADeviner}"></span>
 
 <p>Avancement partie:</p>
