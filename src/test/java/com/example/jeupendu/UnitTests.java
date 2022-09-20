@@ -1,5 +1,6 @@
 package com.example.jeupendu;
 
+import com.example.jeupendu.business.Partie;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +14,7 @@ class UnitTests {
 
         partie.jouer('t');
 
-        assertTrue(partie.getAvancement()[0] == '_');
+        assertTrue(partie.getAvancement()[0] == Partie.SYMBOLE_NON_TROUVE);
         assertTrue(partie.getAvancement()[2] == 't');
     }
 

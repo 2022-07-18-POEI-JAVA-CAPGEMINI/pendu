@@ -1,10 +1,10 @@
-package com.example.jeupendu;
+package com.example.jeupendu.business;
 
 public class Partie {
 
+    public static final char SYMBOLE_NON_TROUVE = '-';
     private char[] motADeviner;
     private int nombreTentativesRestantes;
-
     private char[] avancement;
 
     public Partie(char[] motADeviner) {
@@ -12,7 +12,7 @@ public class Partie {
         this.nombreTentativesRestantes = 9;
         avancement = new char[motADeviner.length];
         for (int i = 0; i < avancement.length; i++) {
-            avancement[i] = '_';
+            avancement[i] = SYMBOLE_NON_TROUVE;
         }
     }
 
@@ -31,7 +31,7 @@ public class Partie {
 
     public boolean isGagne() {
         for (int i = 0; i < avancement.length; i++) {
-            if(avancement[i] == '_')
+            if(avancement[i] == SYMBOLE_NON_TROUVE)
                 return false;
         }
         return true;
@@ -42,5 +42,9 @@ public class Partie {
 
     public int getNombreTentativesRestantes() {
         return nombreTentativesRestantes;
+    }
+
+    public char[] getMotADeviner() {
+        return motADeviner;
     }
 }
