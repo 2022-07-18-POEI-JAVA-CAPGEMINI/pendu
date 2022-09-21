@@ -11,15 +11,15 @@
 <body>
 <h1>Jeu du Pendu</h1>
 
-<a href="classement" >Classement des joueurs</a>
-<br/>
-<br/>
+<p>Classement des joueurs</p>
 
-<form method="POST" action="start">
-    <span>Choisissez votre pseudo:</span>
-    <input type="text" name="pseudo" id="pseudo" required/>
-    <input type="submit" value="Commencer une partie"/>
-</form>
+
+<ul th:each="joueur: ${joueurs}">
+    <li th:text="${joueur.score + ' '+joueur.pseudo}"></li>
+</ul>
+
+
+<a href="pendu">Nouvelle partie</a>
 
 </body>
 </html>
